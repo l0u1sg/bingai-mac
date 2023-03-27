@@ -8,19 +8,6 @@ module.exports = {
     extendInfo: {
       LSUIElement: "true",
     },
-    osxSign: {
-      hardenedRuntime: false,
-      gatekeeperAssess: false,
-      identity: "Developer ID Application: me@louisgallet.fr (7629P8M3HR)",
-    },
-    osxNotarize: {
-      appBundleId: "fr.louisgallet.bingaimac",
-
-      tool: "notarytool",
-      appleId: parsed.APPLE_ID,
-      appleIdPassword: parsed.APPLE_PASSWORD,
-      teamId: parsed.APPLE_TEAM_ID,
-    },
   },
   publishers: [
     {

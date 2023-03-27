@@ -1,7 +1,7 @@
 require("update-electron-app")();
 
 const { menubar } = require("menubar");
-
+const Nucleus = require("nucleus-analytics");
 
 const path = require("path");
 const {
@@ -32,6 +32,7 @@ app.on("ready", () => {
     details.requestHeaders['User-Agent'] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.51"
     callback({ requestHeaders: details.requestHeaders })
 })
+  Nucleus.init("638d9ccf4a5ed2dae43ce122");
 
   const tray = new Tray(image);
 
