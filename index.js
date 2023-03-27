@@ -24,7 +24,7 @@ const filter = {
 
 
 const image = nativeImage.createFromPath(
-  path.join(__dirname, `images/newiconTemplate.png`)
+  path.join(__dirname, `images/icon-toolbar@2x.png`)
 );
 
 app.on("ready", () => {
