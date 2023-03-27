@@ -1,7 +1,7 @@
 require("update-electron-app")();
 
 const { menubar } = require("menubar");
-const Nucleus = require("nucleus-analytics");
+
 
 const path = require("path");
 const {
@@ -11,15 +11,27 @@ const {
   Menu,
   globalShortcut,
   shell,
+  session,
 } = require("electron");
 const contextMenu = require("electron-context-menu");
+const filter = {
+  urls: [
+    "https://*.bing.com/*",
+    "https://*.microsoft.com/*",
+  ],
+}
+
+
 
 const image = nativeImage.createFromPath(
   path.join(__dirname, `images/newiconTemplate.png`)
 );
 
 app.on("ready", () => {
-  Nucleus.init("638d9ccf4a5ed2dae43ce122");
+  session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
+    details.requestHeaders['User-Agent'] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.51"
+    callback({ requestHeaders: details.requestHeaders })
+})
 
   const tray = new Tray(image);
 
@@ -70,7 +82,7 @@ app.on("ready", () => {
       {
         label: "Open in browser",
         click: () => {
-          shell.openExternal("https://chat.openai.com/chat");
+          shell.openExternal("https://edgeservices.bing.com/edgesvc/chat");
         },
       },
       {

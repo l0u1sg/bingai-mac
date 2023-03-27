@@ -1,8 +1,8 @@
 {
-  "name": "chatgpt-mac",
-  "productName": "chatgpt-mac",
-  "version": "0.0.5",
-  "description": "Menubar app for ChatGPT",
+  "name": "bingai-mac",
+  "productName": "bingai-mac",
+  "version": "0.0.1",
+  "description": "Menubar app for BingAI",
   "main": "index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,13 +12,13 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [
-    "chatgpt",
+    "BingAI",
     "openai",
     "mac"
   ],
   "author": {
-    "name": "Vince Loewe",
-    "email": "vince@lyser.io"
+    "name": "Louis Gallet (forked from Vincent Lwt)",
+    "email": "me@louisgallet.fr"
   },
   "license": "MIT",
   "dependencies": {
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vincelwt/chatgpt-mac"
+    "url": "https://github.com/l0u1sg/bingai-mac"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.4",

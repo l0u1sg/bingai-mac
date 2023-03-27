@@ -1,20 +1,20 @@
 const { parsed } = require("dotenv").config();
 module.exports = {
   packagerConfig: {
-    name: "ChatGPT",
-    executableName: "ChatGPT",
+    name: "BingAI",
+    executableName: "BingAI",
     icon: "images/icon",
-    appBundleId: "com.vincelwt.chatgptmac",
+    appBundleId: "fr.louisgallet.bingaimac",
     extendInfo: {
       LSUIElement: "true",
     },
     osxSign: {
       hardenedRuntime: false,
       gatekeeperAssess: false,
-      identity: "Developer ID Application: Lyser.io Ltd (R4PF6TTR6Z)",
+      identity: "Developer ID Application: me@louisgallet.fr (7629P8M3HR)",
     },
     osxNotarize: {
-      appBundleId: "com.vincelwt.chatgptmac",
+      appBundleId: "fr.louisgallet.bingaimac",
 
       tool: "notarytool",
       appleId: parsed.APPLE_ID,
@@ -27,8 +27,8 @@ module.exports = {
       name: "@electron-forge/publisher-github",
       config: {
         repository: {
-          owner: "vincelwt",
-          name: "chatgpt-mac",
+          owner: "louisgallet",
+          name: "bingai-mac",
         },
         prerelease: true,
       },
