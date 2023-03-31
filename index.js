@@ -34,6 +34,7 @@ app.on("ready", () => {
     callback({ requestHeaders: details.requestHeaders })
 })
   Nucleus.init("638d9ccf4a5ed2dae43ce122");
+
   // Launch on startup
   const autoLauncher = new AutoLaunch({
     name: "BingAI",
@@ -101,15 +102,23 @@ app.on("ready", () => {
       {
         label: "View on GitHub",
         click: () => {
-          shell.openExternal("https://github.com/vincelwt/chatgpt-mac");
+          shell.openExternal("https://github.com/l0u1sg/bingai-mac");
         },
       },
       {
-        label: "Author on Twitter",
+        label: "Original author on Twitter",
         click: () => {
           shell.openExternal("https://twitter.com/vincelwt");
         },
       },
+      {
+        type: "separator",
+      },
+      {
+        // show version and app name
+        label: `BingAI v${app.getVersion()}`,
+        enabled: false,
+      }
     ];
 
     tray.on("right-click", () => {
