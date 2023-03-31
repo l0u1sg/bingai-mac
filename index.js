@@ -1,4 +1,5 @@
 require("update-electron-app")();
+const AutoLaunch = require("auto-launch");
 
 const { menubar } = require("menubar");
 const Nucleus = require("nucleus-analytics");
@@ -33,7 +34,15 @@ app.on("ready", () => {
     callback({ requestHeaders: details.requestHeaders })
 })
   Nucleus.init("638d9ccf4a5ed2dae43ce122");
-
+  // Launch on startup
+  const autoLauncher = new AutoLaunch({
+    name: "BingAI",
+  });
+  autoLauncher.isEnabled().then((isEnabled) => {
+    if (!isEnabled) {
+      autoLauncher.enable();
+    }
+  });
   const tray = new Tray(image);
 
   const mb = menubar({

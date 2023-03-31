@@ -22,6 +22,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "auto-launch": "^5.0.5",
+    "easy-auto-launch": "^6.0.2",
     "electron-context-menu": "^3.6.0",
     "menubar": "^9.2.3",
     "nucleus-analytics": "^4.0.3",
