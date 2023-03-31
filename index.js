@@ -115,6 +115,18 @@ app.on("ready", () => {
         type: "separator",
       },
       {
+        label: "Check for updates",
+        click: () => {
+          require("update-electron-app")(
+            {
+              repo: "l0u1sg/bingai-mac",
+              updateInterval: "1 hour",
+            },
+          );
+        },
+
+      },
+      {
         // show version and app name
         label: `BingAI v${app.getVersion()}`,
         enabled: false,
