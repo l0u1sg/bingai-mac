@@ -12,12 +12,13 @@ module.exports = {
   publishers: [
     {
       name: "@electron-forge/publisher-github",
+      platforms: ["darwin", "win32", "linux"],
       config: {
         repository: {
-          owner: "louisgallet",
+          owner: "l0u1sg",
           name: "bingai-mac",
         },
-        prerelease: true,
+        prerelease: false,
       },
     },
   ],
